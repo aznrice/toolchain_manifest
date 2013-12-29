@@ -39,4 +39,5 @@
   <project name="platform/external/svox" path="android/external/svox" revision="refs/tags/android-4.4.2_r1"/>
   <project name="platform/system/core" path="android/system/core" revision="linaro_android_4.4.2" />
   <project path="android/bionic" name="platform/bionic" revision="linaro_android_4.4.2" />
+  <project name="platform/external/compiler-rt" path="android/external/compiler-rt" revision="refs/tags/android-4.4.2_r1" />
 </manifest>

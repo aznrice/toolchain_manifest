@@ -2,60 +2,57 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
-  <remote  name="korg"
-           fetch="git://android.git.linaro.org/"
+  <remote  name="linaro-other"
+           fetch="git://git.linaro.org/"
            review="review.android.git.linaro.org" />
   <remote  name="linaro-android"
            fetch="git://android.git.linaro.org/"
            review="review.android.git.linaro.org" />
   <remote  name="github"
            fetch="https://github.com/" />
+  <remote  name="brick"
+           fetch="https://git.bricked.de/"/>
   <default revision="master"
            remote="aosp"
-           sync-j="4" />
+           sync-j="12" />
 
-  <project path="android/device/common" name="device/common" revision="6a2995683de147791e516aae2ccb31fdfbe2ad30" remote="linaro-android" />
-  <project path="android/device/linaro/common" name="device/linaro/common" revision="2a353ac59ec47e03d55b43c8b4588888756207fc" remote="linaro-android" />
-  <project path="android/device/linaro/pandaboard" name="device/linaro/pandaboard" revision="db9d676ac08674e9f79f66b4c2d421cb07bf9db9" remote="linaro-android" />
-  <project path="android/bionic" name="platform/bionic" revision="f24cec843abdbbbfd77f4df4ffb5a7c6cbac2648" remote="linaro-android" />
-  <project path="android/build" name="platform/build" revision="ce01a5193c08b2f4afe8ea5a8ed0153d5241c9ee" remote="linaro-android"/>
-  <project path="android/external/elfutils" name="platform/external/elfutils" revision="540da1c35be501a8d4f69435d45459b393bea20b" remote="linaro-android" />
-  <project path="android/external/svox" name="platform/external/svox" revision="838228cc17b5798e51bc20d06e54dbd781e441db" remote="linaro-android" />
-  <project path="android/frameworks/base" name="platform/frameworks/base" revision="f51a2b1cfc9bc8accad920f716918267aa6a52ec" remote="linaro-android" />
-  <project path="android/frameworks/native" name="platform/frameworks/native" revision="00f60b31f87a5771df1258c2e2622308bae2ca56" remote="linaro-android" />
-  <project path="android/hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" revision="8ea7f852151796d802340fbc2c5b353ff2ddf4cc" remote="linaro-android" />
-  <project path="android/system/core" name="platform/system/core" revision="b9e2b23277a9910c8f6ec158757814541572cebe" remote="linaro-android" />
+  <project path="android/device/common" name="device/common" revision="master" remote="linaro-android" />
+  <project path="android/device/linaro/common" name="device/linaro/common" revision="master" remote="linaro-android" />
+  <project path="android/bionic" name="platform/bionic" revision="master" remote="linaro-android" />
+  <project path="android/build" name="platform/build" revision="master" remote="linaro-android">
+    <copyfile dest="android/Makefile" src="core/root.mk"/>
+  </project>
+  <project path="android/external/elfutils" name="platform/external/elfutils" revision="master" remote="linaro-android" />
+  <project path="android/external/svox" name="platform/external/svox" revision="master" remote="linaro-android" />
+  <project path="android/frameworks/base" name="platform/frameworks/base" revision="master" remote="linaro-android" />
+  <project path="android/frameworks/native" name="platform/frameworks/native" revision="master" remote="linaro-android" />
+  <project path="android/system/core" name="platform/system/core" revision="master" remote="linaro-android" />
   <project path="avr-libc" name="toolchain/avr-libc" />
   <project path="benchmark" name="toolchain/benchmark" />
   <project path="binutils" name="toolchain/binutils" />
-  <project path="binutils/binutils-current" name="toolchain/binutils-current" revision="a894b8ee163afc824a6522511f8f9e329f8497cc" remote="linaro-android" />
-  <project path="build" name="aznrice/toolchain_build" revision="master" remote="github" />
+  <project path="binutils/binutils-current" name="toolchain/binutils-current" revision="linaro-2.23.52.0.2" remote="linaro-android" />
+  <project path="build" name="aznrice/toolchain_build.git" revision="master" remote="brick" />
   <project path="ccache" name="toolchain/ccache" />
   <project path="clang" name="toolchain/clang" />
   <project path="cloog" name="toolchain/cloog" />
-  <project path="cloog/cloog-current" name="toolchain/cloog-current" revision="eb1a402a429e34661eaaaf9d90af2ca4184d1928" remote="linaro-android" />
+  <project path="cloog/cloog-current" name="toolchain/cloog-current" revision="linaro-0.18.1" remote="linaro-android" />
   <project path="compiler-rt" name="toolchain/compiler-rt" />
   <project path="expat" name="toolchain/expat" />
-  <project path="gcc" name="toolchain/gcc" />
-  <project path="gcc/gcc-Boosted" name="aznrice/GCC_SaberMod" revision="linaro-4.9" remote="github" />
-  <project path="gcc-patches" name="toolchain/gcc-patches" revision="6840ad49657cfbcb5bcc8e8fa6ef71b99c06dd93" remote="linaro-android" />
-  <project path="gdb" name="toolchain/gdb" />
-  <project path="gdb/gdb-current" name="toolchain/gdb-current" revision="d40fd6ba18760d4a51a9e3a2d4d7f6b48adeda60" remote="linaro-android" />
-  <project path="gmp" name="toolchain/gmp" />
-  <project path="gmp/gmp-current" name="toolchain/gmp-current" revision="4f74a6b4a5e86d22b010ea84d4e780eab3233418" remote="linaro-android" />
+  <project path="gcc/gcc-Boosted" name="aznrice/GCC_Boosted" revision="linaro-4.9" remote="github" />
+  <project path="gcc-patches" name="toolchain/gcc-patches" revision="master" remote="linaro-android" />
+  <project path="gdb/gdb-current" name="toolchain/gdb-current" revision="refs/tags/linaro-7.7-2014.05" remote="linaro-android" />
+  <project path="gmp/gmp-current" name="toolchain/gmp-current" revision="linaro-5.1.1" remote="linaro-android" />
   <project path="gold" name="toolchain/gold" />
   <project path="isl" name="toolchain/isl" />
   <project path="llvm" name="toolchain/llvm" />
   <project path="mclinker" name="toolchain/mclinker" />
-  <project path="mpc" name="toolchain/mpc" />
-  <project path="mpc/mpc-current" name="mpc/mpc-current" revision="4342b66624e730a738a0bd10aa02c95021e2b9a1" remote="linaro-android" />
-  <project path="mpfr" name="toolchain/mpfr" />
-  <project path="mpfr/mpfr-current" name="toolchain/mpfr-current" revision="b7dd7f0020caff64360be6b35417035c3602cc95" remote="linaro-android" />
+  <project path="mpc/mpc-current" name="toolchain/mpc-current" revision="linaro-1.0.1" remote="linaro-android" />
+  <project path="mpfr/mpfr-current" name="toolchain/mpfr-current" revision="linaro-3.1.2" remote="linaro-android" />
   <project path="perl" name="toolchain/perl" />
   <project path="polly" name="toolchain/polly" />
-  <project path="ppl" name="toolchain/ppl" />
+  <project path="ppl/ppl-1.1" name="aznrice/ppl.git" revision="ppl-1.1" remote="brick" />
   <project path="python" name="toolchain/python" />
   <project path="valgrind" name="toolchain/valgrind" />
   <project path="yasm" name="toolchain/yasm" />

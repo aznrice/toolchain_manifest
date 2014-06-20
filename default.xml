@@ -32,7 +32,7 @@
   <project path="avr-libc" name="toolchain/avr-libc" />
   <project path="benchmark" name="toolchain/benchmark" />
   <project path="binutils" name="toolchain/binutils" />
-  <project path="binutils/binutils-current" name="toolchain/binutils-current" revision="master" remote="aosp" />
+  <project path="binutils/binutils-current" name="toolchain/binutils-current" revision="tags/refs/linaro_binutils-2_24-2014_06_release" remote="linaro-android" />
   <project path="build" name="aznrice/toolchain_build.git" revision="master" remote="brick" />
   <project path="ccache" name="toolchain/ccache" />
   <project path="clang" name="toolchain/clang" />
